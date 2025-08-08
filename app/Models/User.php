@@ -19,6 +19,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Storage;
+use Laravel\Sanctum\HasApiTokens;
 
 /**
  * @property int $id
@@ -58,6 +59,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     use HasFactory;
     use MustVerifyEmail;
     use Notifiable;
+    use HasApiTokens;
 
     protected $fillable = [
         'status',
