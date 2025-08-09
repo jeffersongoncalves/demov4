@@ -7,6 +7,7 @@ use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
+use Joaopaulolndev\FilamentPdfViewer\Forms\Components\PdfViewerField;
 use function filled;
 
 class AdminForm
@@ -36,6 +37,11 @@ class AdminForm
                             ->required(fn (string $context): bool => $context === 'create')
                             ->dehydrated(fn ($state) => filled($state))
                             ->minLength(6),
+                        PdfViewerField::make('attachment')
+                            ->label('View the PDF')
+                            ->fileUrl(asset('/attachment/materiais.pdf'))
+                            ->minHeight('40svh')
+                            ->columnSpanFull(),
                     ]),
             ]);
     }

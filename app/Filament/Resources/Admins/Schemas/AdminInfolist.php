@@ -7,6 +7,7 @@ use Filament\Infolists\Components\IconEntry;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
+use Joaopaulolndev\FilamentPdfViewer\Infolists\Components\PdfViewerEntry;
 
 class AdminInfolist
 {
@@ -25,6 +26,11 @@ class AdminInfolist
                             ->copyable()
                             ->copyMessage('Email copied successfully!')
                             ->copyMessageDuration(1500),
+                        PdfViewerEntry::make('attachment')
+                            ->label('View the PDF')
+                            ->fileUrl(asset('/attachment/materiais.pdf'))
+                            ->minHeight('40svh')
+                            ->columnSpanFull(),
                     ]),
                 AdditionalInformation::make([
                     'created_at',

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5a206daa913af68454f55f69b549976a",
+    "content-hash": "b75771c0c15c3be603594b01a24161f6",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -2353,14 +2353,14 @@
         },
         {
             "name": "joaopaulolndev/filament-pdf-viewer",
-            "version": "dev-2.x-upgrade-v4",
+            "version": "2.x-dev",
             "dist": {
                 "type": "path",
                 "url": "../filament-pdf-viewer",
-                "reference": "46d22145ccfce8d6bcc77ce045f3f058ecb36baf"
+                "reference": "381c2fbbced49788a57c97a3df56782a91bb23dc"
             },
             "require": {
-                "filament/filament": "~4.0",
+                "filament/filament": "^4.0",
                 "php": "^8.2",
                 "spatie/laravel-package-tools": "^1.15.0"
             },
