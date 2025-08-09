@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "57ba5abab8faa2dca972dfe92fa39ffb",
+    "content-hash": "f2a5398175d47d574247796eb3facd01",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -2183,7 +2183,7 @@
             "dist": {
                 "type": "path",
                 "url": "../filament-edit-profile",
-                "reference": "54f9dca19d9e939350e1dbd1dadc03cc0213bc2c"
+                "reference": "77704e93c975df258fc9576393c1b5bd5acf9d87"
             },
             "require": {
                 "filament/filament": "^4.0",
@@ -2192,7 +2192,6 @@
                 "spatie/laravel-package-tools": "^1.15.0"
             },
             "require-dev": {
-                "filament/upgrade": "4.0.0-beta23",
                 "laradumps/laradumps": "^3.1",
                 "laravel/pint": "^1.0",
                 "nunomaduro/collision": "^7.9|^8.6",
@@ -12358,7 +12357,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "joaopaulolndev/filament-edit-profile": 20,
         "joaopaulolndev/filament-general-settings": 20
     },
     "prefer-stable": true,

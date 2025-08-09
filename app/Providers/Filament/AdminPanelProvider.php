@@ -4,6 +4,8 @@ namespace App\Providers\Filament;
 
 use App\Filament\Pages\Auth\Login;
 use Filament\Actions\Action;
+use Filament\Auth\MultiFactor\App\AppAuthentication;
+use Filament\Auth\MultiFactor\Email\EmailAuthentication;
 use Filament\Enums\ThemeMode;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
@@ -64,6 +66,11 @@ class AdminPanelProvider extends PanelProvider
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
             ])
+            ->multiFactorAuthentication([
+                AppAuthentication::make()
+                    ->recoverable(),
+                EmailAuthentication::make(),
+            ])
             ->authMiddleware([
                 Authenticate::class,
             ])
@@ -84,6 +91,7 @@ class AdminPanelProvider extends PanelProvider
                     ->shouldShowEmailForm()
                     ->shouldShowDeleteAccountForm()
                     ->shouldShowSanctumTokens()
+                    ->shouldShowMultiFactorAuthentication()
                     ->shouldShowBrowserSessionsForm()
                     ->shouldShowAvatarForm()
             ])

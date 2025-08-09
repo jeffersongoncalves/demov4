@@ -3,6 +3,9 @@
 namespace App\Models;
 
 use App\Observers\AdminObserver;
+use Filament\Auth\MultiFactor\App\Contracts\HasAppAuthentication;
+use Filament\Auth\MultiFactor\App\Contracts\HasAppAuthenticationRecovery;
+use Filament\Auth\MultiFactor\Email\Contracts\HasEmailAuthentication;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Models\Contracts\HasAvatar;
 use Filament\Panel;
@@ -50,7 +53,7 @@ use Laravel\Sanctum\HasApiTokens;
  * @mixin \Eloquent
  */
 #[ObservedBy(AdminObserver::class)]
-class Admin extends Model implements AuthenticatableContract, AuthorizableContract, CanResetPasswordContract, FilamentUser, MustVerifyEmailContract, HasAvatar
+class Admin extends Model implements AuthenticatableContract, AuthorizableContract, CanResetPasswordContract, FilamentUser, MustVerifyEmailContract, HasAvatar, HasAppAuthentication, HasAppAuthenticationRecovery, HasEmailAuthentication
 {
     use Authenticatable;
     use Authorizable;
@@ -67,9 +70,14 @@ class Admin extends Model implements AuthenticatableContract, AuthorizableContra
         'password',
         'avatar_url',
         'custom_fields',
+        'app_authentication_secret',
+        'app_authentication_recovery_codes',
+        'has_email_authentication',
     ];
 
     protected $hidden = [
+        'app_authentication_secret',
+        'app_authentication_recovery_codes',
         'password',
         'remember_token',
     ];
@@ -90,13 +98,54 @@ class Admin extends Model implements AuthenticatableContract, AuthorizableContra
         return $this->$avatarColumn ? Storage::url($this->$avatarColumn) : null;
     }
 
+    public function getAppAuthenticationSecret(): ?string
+    {
+        return $this->app_authentication_secret;
+    }
+
+    public function saveAppAuthenticationSecret(?string $secret): void
+    {
+        $this->app_authentication_secret = $secret;
+        $this->save();
+    }
+
+    public function getAppAuthenticationHolderName(): string
+    {
+        return $this->email;
+    }
+
+    public function getAppAuthenticationRecoveryCodes(): ?array
+    {
+        return $this->app_authentication_recovery_codes;
+    }
+
+    public function saveAppAuthenticationRecoveryCodes(?array $codes): void
+    {
+        $this->app_authentication_recovery_codes = $codes;
+        $this->save();
+    }
+
+    public function hasEmailAuthentication(): bool
+    {
+        return $this->has_email_authentication;
+    }
+
+    public function toggleEmailAuthentication(bool $condition): void
+    {
+        $this->has_email_authentication = $condition;
+        $this->save();
+    }
+
     protected function casts(): array
     {
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
             'status' => 'boolean',
-            'custom_fields' => 'array'
+            'custom_fields' => 'array',
+            'app_authentication_secret' => 'encrypted',
+            'app_authentication_recovery_codes' => 'encrypted:array',
+            'has_email_authentication' => 'boolean',
         ];
     }
 }

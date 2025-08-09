@@ -18,7 +18,7 @@
         "php": "^8.2",
         "filament/filament": "v4.0.0-beta23",
         "jeffersongoncalves/filament-logo": "^2.0",
-        "joaopaulolndev/filament-edit-profile": "2.x-dev",
+        "joaopaulolndev/filament-edit-profile": "*",
         "joaopaulolndev/filament-general-settings": "2.x-dev",
         "laravel/framework": "^12.0",
         "laravel/sanctum": "^4.0",
