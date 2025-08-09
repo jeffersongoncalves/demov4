@@ -93,7 +93,7 @@ class AdminPanelProvider extends PanelProvider
                     ->shouldShowSanctumTokens()
                     ->shouldShowMultiFactorAuthentication()
                     ->shouldShowBrowserSessionsForm()
-                    ->shouldShowAvatarForm()
+                    ->shouldShowAvatarForm(),
             ])
             ->userMenuItems([
                 'profile' => Action::make('profile')
