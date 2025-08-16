@@ -11,7 +11,6 @@ use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
-use Filament\Navigation\MenuItem;
 use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
@@ -24,9 +23,11 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Support\Facades\Vite;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Joaopaulolndev\FilamentCheckSslWidget\FilamentCheckSslWidgetPlugin;
 use Joaopaulolndev\FilamentEditProfile\FilamentEditProfilePlugin;
 use Joaopaulolndev\FilamentEditProfile\Pages\EditProfilePage;
 use Joaopaulolndev\FilamentGeneralSettings\FilamentGeneralSettingsPlugin;
+use Joaopaulolndev\FilamentWorldClock\FilamentWorldClockPlugin;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -41,8 +42,8 @@ class AdminPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::Amber,
             ])
-            ->brandLogo(fn () => Vite::asset(config('filakit.favicon.logo')))
-            ->brandLogoHeight(fn () => request()->is('admin/login', 'admin/password-reset/*') ? '121px' : '50px')
+            ->brandLogo(fn() => Vite::asset(config('filakit.favicon.logo')))
+            ->brandLogoHeight(fn() => request()->is('admin/login', 'admin/password-reset/*') ? '121px' : '50px')
             ->viteTheme('resources/css/filament/admin/theme.css')
             ->defaultThemeMode(config('filakit.theme_mode', ThemeMode::Dark))
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
@@ -89,11 +90,30 @@ class AdminPanelProvider extends PanelProvider
                     ->setSort(10)
                     ->shouldRegisterNavigation(false)
                     ->shouldShowEmailForm()
+                    ->shouldShowLocaleForm(options: [
+                        'pt_BR' => '🇧🇷 Português',
+                        'en' => '🇺🇸 Inglês',
+                        'es' => '🇪🇸 Espanhol',
+                    ])
+                    ->shouldShowThemeColorForm()
                     ->shouldShowDeleteAccountForm()
                     ->shouldShowSanctumTokens()
                     ->shouldShowMultiFactorAuthentication()
                     ->shouldShowBrowserSessionsForm()
                     ->shouldShowAvatarForm(),
+                FilamentWorldClockPlugin::make()
+                    ->setQuantityPerRow(2)
+                    ->timezones([
+                        'America/New_York',
+                        'America/Sao_Paulo',
+                        'Asia/Tokyo',
+                    ]),
+                FilamentCheckSslWidgetPlugin::make()
+                    ->domains([
+                        'laravel.com',
+                        'filamentphp.com',
+                        'github.com',
+                    ]),
             ])
             ->userMenuItems([
                 'profile' => Action::make('profile')

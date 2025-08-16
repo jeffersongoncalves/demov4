@@ -68,6 +68,8 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
         'password',
         'avatar_url',
         'custom_fields',
+        'locale',
+        'theme_color',
     ];
 
     protected $hidden = [

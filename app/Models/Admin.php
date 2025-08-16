@@ -74,6 +74,8 @@ class Admin extends Model implements AuthenticatableContract, AuthorizableContra
         'app_authentication_recovery_codes',
         'has_email_authentication',
         'attachment',
+        'locale',
+        'theme_color',
     ];
 
     protected $hidden = [
