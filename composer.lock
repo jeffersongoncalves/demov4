@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "11e8bdcf09ff0dd30e296d00f468d6b1",
+    "content-hash": "04578152e75be7cdc206a4c65f7bb02f",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -2099,16 +2099,16 @@
         },
         {
             "name": "jeffersongoncalves/filament-ace-editor-field",
-            "version": "1.0.0",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jeffersongoncalves/filament-ace-editor-field.git",
-                "reference": "70f98e870f0a2933714b9616c3c695ff576ffff4"
+                "reference": "600869977f6a9b6f7aecfd1f000ffe7c5aec7064"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jeffersongoncalves/filament-ace-editor-field/zipball/70f98e870f0a2933714b9616c3c695ff576ffff4",
-                "reference": "70f98e870f0a2933714b9616c3c695ff576ffff4",
+                "url": "https://api.github.com/repos/jeffersongoncalves/filament-ace-editor-field/zipball/600869977f6a9b6f7aecfd1f000ffe7c5aec7064",
+                "reference": "600869977f6a9b6f7aecfd1f000ffe7c5aec7064",
                 "shasum": ""
             },
             "require": {
@@ -2156,9 +2156,9 @@
             ],
             "support": {
                 "issues": "https://github.com/jeffersongoncalves/filament-ace-editor-field/issues",
-                "source": "https://github.com/jeffersongoncalves/filament-ace-editor-field/tree/1.0.0"
+                "source": "https://github.com/jeffersongoncalves/filament-ace-editor-field/tree/1.0.3"
             },
-            "time": "2025-08-17T17:21:19+00:00"
+            "time": "2025-08-17T17:59:21+00:00"
         },
         {
             "name": "jeffersongoncalves/filament-logo",
@@ -2393,11 +2393,11 @@
         },
         {
             "name": "joaopaulolndev/filament-edit-env",
-            "version": "dev-2.x-upgrade-v4",
+            "version": "2.x-dev",
             "dist": {
                 "type": "path",
                 "url": "../filament-edit-env",
-                "reference": "1dfe9ea395ad1a8524597ee791b654d7fac345b6"
+                "reference": "0fccbe16e13642b7da69f293ef0bc4a8d4ff7a6d"
             },
             "require": {
                 "filament/filament": "^4.0",
@@ -2477,7 +2477,7 @@
             "dist": {
                 "type": "path",
                 "url": "../filament-edit-profile",
-                "reference": "cba566fe51418df01a166ab2b55927b5186282a4"
+                "reference": "b986121ba20d57a16a219929a3110f1fd46ef22f"
             },
             "require": {
                 "filament/filament": "^4.0",
@@ -13247,6 +13247,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "joaopaulolndev/filament-check-ssl-widget": 20,
+        "joaopaulolndev/filament-edit-env": 20,
         "joaopaulolndev/filament-edit-profile": 20,
         "joaopaulolndev/filament-general-settings": 20,
         "joaopaulolndev/filament-pdf-viewer": 20,

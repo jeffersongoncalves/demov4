@@ -19,7 +19,7 @@
         "filament/filament": "^4.0",
         "jeffersongoncalves/filament-logo": "^2.0",
         "joaopaulolndev/filament-check-ssl-widget": "dev-2.x-upgrade-v4",
-        "joaopaulolndev/filament-edit-env": "*",
+        "joaopaulolndev/filament-edit-env": "2.x-dev",
         "joaopaulolndev/filament-edit-profile": "2.x-dev",
         "joaopaulolndev/filament-general-settings": "2.x-dev",
         "joaopaulolndev/filament-pdf-viewer": "2.x-dev",

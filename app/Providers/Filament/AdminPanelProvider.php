@@ -24,6 +24,7 @@ use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Support\Facades\Vite;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Joaopaulolndev\FilamentCheckSslWidget\FilamentCheckSslWidgetPlugin;
+use Joaopaulolndev\FilamentEditEnv\FilamentEditEnvPlugin;
 use Joaopaulolndev\FilamentEditProfile\FilamentEditProfilePlugin;
 use Joaopaulolndev\FilamentEditProfile\Pages\EditProfilePage;
 use Joaopaulolndev\FilamentGeneralSettings\FilamentGeneralSettingsPlugin;
@@ -80,6 +81,8 @@ class AdminPanelProvider extends PanelProvider
                 __('Management'),
             ])
             ->plugins([
+                FilamentEditEnvPlugin::make()
+                    ->setIcon('heroicon-o-cog'),
                 FilamentGeneralSettingsPlugin::make(),
                 FilamentEditProfilePlugin::make()
                     ->slug('my-profile')
