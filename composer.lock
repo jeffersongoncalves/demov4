@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f013720ea4f03e8884eeed008cf1173e",
+    "content-hash": "387a03984d0abcbc9ee51eef76a98547",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -2330,11 +2330,11 @@
         },
         {
             "name": "joaopaulolndev/filament-edit-profile",
-            "version": "dev-2.x-add-theme-color",
+            "version": "2.x-dev",
             "dist": {
                 "type": "path",
                 "url": "../filament-edit-profile",
-                "reference": "8dc6f20bb4afd271da83253994df5c5fe22bb60e"
+                "reference": "87be87ac3e235eec6b60013ea2409872a416d39d"
             },
             "require": {
                 "filament/filament": "^4.0",
