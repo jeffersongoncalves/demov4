@@ -142,10 +142,6 @@
         "joaopaulolndev/filament-check-ssl-widget": {
             "type": "path",
             "url": "../filament-check-ssl-widget"
-        },
-        "joaopaulolndev/filament-edit-env": {
-            "type": "path",
-            "url": "../filament-edit-env"
         }
     }
 }
