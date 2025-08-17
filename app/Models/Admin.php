@@ -53,15 +53,15 @@ use Laravel\Sanctum\HasApiTokens;
  * @mixin \Eloquent
  */
 #[ObservedBy(AdminObserver::class)]
-class Admin extends Model implements AuthenticatableContract, AuthorizableContract, CanResetPasswordContract, FilamentUser, MustVerifyEmailContract, HasAvatar, HasAppAuthentication, HasAppAuthenticationRecovery, HasEmailAuthentication
+class Admin extends Model implements AuthenticatableContract, AuthorizableContract, CanResetPasswordContract, FilamentUser, HasAppAuthentication, HasAppAuthenticationRecovery, HasAvatar, HasEmailAuthentication, MustVerifyEmailContract
 {
     use Authenticatable;
     use Authorizable;
     use CanResetPassword;
+    use HasApiTokens;
     use HasFactory;
     use MustVerifyEmail;
     use Notifiable;
-    use HasApiTokens;
 
     protected $fillable = [
         'status',
@@ -98,6 +98,7 @@ class Admin extends Model implements AuthenticatableContract, AuthorizableContra
     public function getFilamentAvatarUrl(): ?string
     {
         $avatarColumn = config('filament-edit-profile.avatar_column', 'avatar_url');
+
         return $this->$avatarColumn ? Storage::url($this->$avatarColumn) : null;
     }
 
