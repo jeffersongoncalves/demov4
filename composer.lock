@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "04578152e75be7cdc206a4c65f7bb02f",
+    "content-hash": "04df7680c8080c4f6d26fb1421f0a539",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -2229,6 +2229,71 @@
             "time": "2025-06-21T13:26:40+00:00"
         },
         {
+            "name": "jeffersongoncalves/filament-rating-field",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "../../jeffersongoncalves/filament-rating-field",
+                "reference": "8f163ad23dcd2c08f203ea632e221c78aeea0acf"
+            },
+            "require": {
+                "filament/filament": "^4.0",
+                "php": "^8.2|^8.3",
+                "spatie/laravel-package-tools": "^1.14.0"
+            },
+            "require-dev": {
+                "larastan/larastan": "^3.0",
+                "laravel/pint": "^1.21",
+                "orchestra/testbench": "^9.0|^10.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "JeffersonGoncalves\\Filament\\RatingField\\RatingFieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JeffersonGoncalves\\Filament\\RatingField\\": "src"
+                }
+            },
+            "scripts": {
+                "post-autoload-dump": [
+                    "@php ./vendor/bin/testbench package:discover --ansi"
+                ],
+                "analyse": [
+                    "vendor/bin/phpstan analyse"
+                ],
+                "format": [
+                    "vendor/bin/pint"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jefferson Gonçalves",
+                    "email": "gerson.simao.92@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Laravel Filament v4 field that integrates the Ace code editor into your forms, providing a rich, syntax‑highlighted code editing experience.",
+            "homepage": "https://github.com/jeffersongoncalves/filament-rating-field",
+            "keywords": [
+                "filament",
+                "filament-rating-field",
+                "jeffersongoncalves",
+                "laravel",
+                "rating"
+            ],
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "jenssegers/agent",
             "version": "v2.6.4",
             "source": {
@@ -2477,7 +2542,7 @@
             "dist": {
                 "type": "path",
                 "url": "../filament-edit-profile",
-                "reference": "b986121ba20d57a16a219929a3110f1fd46ef22f"
+                "reference": "8e50d7473cce6fcaa78c61540998ee89b4ab231b"
             },
             "require": {
                 "filament/filament": "^4.0",
@@ -13246,6 +13311,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "jeffersongoncalves/filament-rating-field": 20,
         "joaopaulolndev/filament-check-ssl-widget": 20,
         "joaopaulolndev/filament-edit-env": 20,
         "joaopaulolndev/filament-edit-profile": 20,

@@ -7,6 +7,8 @@ use Filament\Infolists\Components\IconEntry;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
+use JeffersonGoncalves\Filament\RatingField\Infolists\Components\RatingEntry;
+use JeffersonGoncalves\Filament\RatingField\Tables\Columns\RatingColumn;
 use Joaopaulolndev\FilamentPdfViewer\Infolists\Components\PdfViewerEntry;
 
 class AdminInfolist
@@ -26,6 +28,7 @@ class AdminInfolist
                             ->copyable()
                             ->copyMessage('Email copied successfully!')
                             ->copyMessageDuration(1500),
+                        RatingEntry::make('rating'),
                         PdfViewerEntry::make('attachment')
                             ->label('View the PDF')
                             ->fileUrl(asset('/attachment/materiais.pdf'))

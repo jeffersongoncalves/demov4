@@ -125,6 +125,7 @@ class AdminPanelProvider extends PanelProvider
                     ->icon('heroicon-m-user-circle'),
             ])
             ->unsavedChangesAlerts()
+            ->emailChangeVerification()
             ->passwordReset()
             ->profile()
             ->databaseNotifications()

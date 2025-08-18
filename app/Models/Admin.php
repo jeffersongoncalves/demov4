@@ -76,6 +76,7 @@ class Admin extends Model implements AuthenticatableContract, AuthorizableContra
         'attachment',
         'locale',
         'theme_color',
+        'rating',
     ];
 
     protected $hidden = [
@@ -149,6 +150,7 @@ class Admin extends Model implements AuthenticatableContract, AuthorizableContra
             'app_authentication_secret' => 'encrypted',
             'app_authentication_recovery_codes' => 'encrypted:array',
             'has_email_authentication' => 'boolean',
+            'rating' => 'int',
         ];
     }
 }

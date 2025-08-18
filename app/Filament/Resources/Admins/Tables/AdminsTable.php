@@ -8,6 +8,7 @@ use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use JeffersonGoncalves\Filament\RatingField\Tables\Columns\RatingColumn;
 
 class AdminsTable
 {
@@ -23,6 +24,7 @@ class AdminsTable
                 TextColumn::make('name')
                     ->searchable()
                     ->sortable(),
+                RatingColumn::make('rating'),
                 TextColumn::make('email')
                     ->searchable()
                     ->sortable()

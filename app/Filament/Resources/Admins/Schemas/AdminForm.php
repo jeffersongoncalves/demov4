@@ -6,7 +6,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
-
+use JeffersonGoncalves\Filament\RatingField\Forms\Components\RatingField;
 use Joaopaulolndev\FilamentPdfViewer\Forms\Components\PdfViewerField;
 use function filled;
 
@@ -34,9 +34,11 @@ class AdminForm
                             ->email(),
                         TextInput::make('password')
                             ->password()
-                            ->required(fn (string $context): bool => $context === 'create')
-                            ->dehydrated(fn ($state) => filled($state))
+                            ->required(fn(string $context): bool => $context === 'create')
+                            ->dehydrated(fn($state) => filled($state))
                             ->minLength(6),
+                        RatingField::make('rating')
+                            ->required(),
                         PdfViewerField::make('attachment')
                             ->label('View the PDF')
                             ->fileUrl(asset('/attachment/materiais.pdf'))
